@@ -2,6 +2,7 @@ package com.cydeo.services;
 
 import java.util.List;
 
+
 public interface CurdService<T,ID> {
     T save(T object);
     List<T> findAll();
