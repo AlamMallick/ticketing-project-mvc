@@ -3,38 +3,34 @@ package com.cydeo.bootstrap;
 import com.cydeo.dto.RoleDTO;
 import com.cydeo.dto.UserDTO;
 import com.cydeo.enums.Gender;
-import com.cydeo.services.RoleService;
-import com.cydeo.services.UserService;
-import com.cydeo.services.impl.RoleServiceImpl;
+import com.cydeo.service.RoleService;
+import com.cydeo.service.UserService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
 public class DataGenerator implements CommandLineRunner {
 
-
-
-    RoleService roleService;
-    UserService userService;
-
+   RoleService roleService;
+   UserService userService;
 
     public DataGenerator(RoleService roleService, UserService userService) {
         this.roleService = roleService;
         this.userService = userService;
     }
 
-
-
     @Override
     public void run(String... args) throws Exception {
+
+
         RoleDTO adminRole = new RoleDTO(1L,"Admin");
         RoleDTO managerRole = new RoleDTO(2L,"Manager");
         RoleDTO employeeRole = new RoleDTO(3L,"Employee");
 
-
         roleService.save(adminRole);
         roleService.save(managerRole);
         roleService.save(employeeRole);
+
         UserDTO user1 = new UserDTO("John", "Kesy",
                 "john@cydeo.com", "Abc1", true, "7459684532", managerRole, Gender.MALE);
         UserDTO user5 = new UserDTO("Mike", "Smith",
@@ -60,6 +56,17 @@ public class DataGenerator implements CommandLineRunner {
         userService.save(user6);
         userService.save(user7);
         userService.save(user8);
+
+
+
+
+
+
+
+
+
+
+
 
 
     }

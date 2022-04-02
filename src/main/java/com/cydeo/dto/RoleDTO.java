@@ -4,12 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
-
+@Data
 public class RoleDTO {
 
-    private long id;
+    private Long id;
     private String description;
 }
